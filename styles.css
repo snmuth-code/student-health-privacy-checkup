@@ -1,0 +1,201 @@
+:root {
+  --cream: #fbf5ec;        /* page background */
+  --cream-dark: #f3e9da;   /* alternate section background */
+  --card: #fffdf9;         /* card background */
+  --text: #2a2024;         /* main text */
+  --muted: #5e5156;        /* secondary text */
+  --accent: #b3263e;       /* red/pink accent (buttons, links) */
+  --accent-dark: #8f1d31;  /* hover state */
+  --teal: #1f6f6b;         /* complementary color */
+  --border: #e4d6c3;
+  --radius: 14px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4 { line-height: 1.25; margin: 0 0 0.75rem; }
+h1 { font-size: clamp(2rem, 6vw, 3.25rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--teal); margin-top: 1.25rem; }
+p { margin: 0 0 1rem; }
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-dark); }
+
+/* Visible focus for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+.narrow { width: min(720px, 100% - 2.5rem); }
+.section { padding: 4rem 0; }
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--text);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  z-index: 20;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(251, 245, 236, 0.95);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 0;
+}
+.brand { font-weight: 700; color: var(--text); text-decoration: none; }
+.nav-list { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; list-style: none; margin: 0; padding: 0; }
+.nav-list a { color: var(--text); text-decoration: none; font-size: 0.95rem; padding: 0.25rem 0; }
+.nav-list a:hover { color: var(--accent); text-decoration: underline; }
+.nav-list .nav-cta { color: var(--accent); font-weight: 600; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 4.5rem 0 3.5rem; }
+.eyebrow { color: var(--teal); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.85rem; }
+.lead { font-size: 1.2rem; max-width: 40rem; color: var(--muted); }
+.note { color: var(--muted); font-size: 0.95rem; margin-top: 1.25rem; }
+
+/* ---------- Buttons ---------- */
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.7rem 1.6rem;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.button-secondary { background: transparent; color: var(--accent); }
+.button-secondary:hover { background: var(--accent); color: #fff; }
+
+/* ---------- Cards ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.card ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+.card li { margin-bottom: 0.5rem; }
+.source {
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: var(--cream-dark);
+  border-left: 3px solid var(--teal);
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+}
+
+/* ---------- Checkup ---------- */
+.checkup-wrap { background: var(--cream-dark); padding: 4rem 0; }
+.privacy-note {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+.question {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 1.25rem;
+}
+.question legend { font-weight: 600; padding: 0 0.5rem; margin-left: -0.5rem; }
+.question label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.question label:hover { background: var(--cream); }
+.question label:focus-within { outline: 3px solid var(--teal); outline-offset: 1px; }
+.question input[type="radio"] { width: 1.25rem; height: 1.25rem; accent-color: var(--accent); }
+
+/* Validation messages */
+.question.has-error { border-color: var(--accent); }
+.field-error, .form-error { color: var(--accent-dark); font-weight: 600; font-size: 0.95rem; margin: 0.5rem 0 0; }
+.form-error {
+  background: #fdecee;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Results */
+.results {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.results ul { padding-left: 1.2rem; }
+.results li { margin-bottom: 0.9rem; }
+
+/* [hidden] must always win over display rules above */
+[hidden] { display: none !important; }
+
+/* ---------- Footer ---------- */
+.site-footer { padding: 2rem 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  .section, .checkup-wrap { padding: 3rem 0; }
+  .hero { padding: 3rem 0 2.5rem; }
+  .question { padding: 1rem; }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
