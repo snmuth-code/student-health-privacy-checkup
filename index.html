@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Health &amp; Privacy Checkup</title>
+  <meta name="description" content="A short educational guide to privacy questions for fitness apps, period trackers, and telehealth portals.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Health &amp; Privacy Checkup</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#fitness">Fitness apps</a></li>
+          <li><a href="#period">Period trackers</a></li>
+          <li><a href="#telehealth">Telehealth</a></li>
+          <li><a class="nav-cta" href="#checkup">Take the checkup</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Intro -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow">For students ages 18–24</p>
+        <h1>Student Health &amp; Privacy Checkup</h1>
+        <p class="lead">
+          Health-related apps and portals can hold personal details. Learn a few
+          practical questions to ask, then take a 5-question checkup for ideas
+          you can act on.
+        </p>
+        <a class="button" href="#checkup">Start the checkup</a>
+        <p class="note">
+          This site is educational only. It is not medical or legal advice.
+        </p>
+      </div>
+    </section>
+
+    <!-- Category sections -->
+    <section class="container section" aria-labelledby="categories-heading">
+      <h2 id="categories-heading">Three places to look</h2>
+
+      <div class="card-grid">
+        <article class="card" id="fitness">
+          <h3>Fitness &amp; wellness apps</h3>
+          <p>
+            These apps may track things like activity, sleep, or location.
+            Knowing what an app collects helps you decide what to share.
+          </p>
+          <h4>Questions to ask</h4>
+          <ul>
+            <li>What information does this app collect, and is any of it optional?</li>
+            <li>Does it need my location, contacts, or photos to work?</li>
+            <li>Can I use it without linking other apps or accounts?</li>
+          </ul>
+          <p class="source">[Add a verified source about fitness app privacy here]</p>
+        </article>
+
+        <article class="card" id="period">
+          <h3>Period trackers</h3>
+          <p>
+            Cycle data can be personal. Check what the app stores, who it may be
+            shared with, and what controls you have.
+          </p>
+          <h4>Questions to ask</h4>
+          <ul>
+            <li>Which details are required, and which can I leave out?</li>
+            <li>Does the app say whether data is shared with other companies?</li>
+            <li>Can I export or delete my data, and how?</li>
+          </ul>
+          <p class="source">[Add a verified source about period tracker privacy here]</p>
+        </article>
+
+        <article class="card" id="telehealth">
+          <h3>Telehealth portals</h3>
+          <p>
+            Portals can hold messages, appointments, and visit information.
+            Check how you sign in and who can see your account.
+          </p>
+          <h4>Questions to ask</h4>
+          <ul>
+            <li>Who runs this portal: my provider, my school, or another company?</li>
+            <li>What sign-in protections are available, such as two-step verification?</li>
+            <li>Who do I contact with privacy questions about my account?</li>
+          </ul>
+          <p class="source">[Add a verified source about telehealth portal privacy here]</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Checkup -->
+    <section class="checkup-wrap" id="checkup" aria-labelledby="checkup-heading">
+      <div class="container narrow">
+        <h2 id="checkup-heading">Privacy checkup</h2>
+
+        <div id="checkup-intro">
+          <p>
+            Think about the health-related apps and portals you use overall.
+            Answer five quick questions. Choose “Not sure” anytime.
+          </p>
+          <p class="privacy-note">
+            Your answers stay on this page. Nothing is saved or sent anywhere,
+            and please don’t type personal health details.
+          </p>
+        </div>
+
+        <form id="checkup-form" novalidate>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+
+          <fieldset class="question" data-question="settings">
+            <legend>1. Have you looked at the privacy settings or permissions in these apps?</legend>
+            <label><input type="radio" name="settings" value="yes"> Yes</label>
+            <label><input type="radio" name="settings" value="no"> No</label>
+            <label><input type="radio" name="settings" value="unsure"> Not sure</label>
+            <p class="field-error" hidden>Please choose an answer.</p>
+          </fieldset>
+
+          <fieldset class="question" data-question="sharing">
+            <legend>2. Do you know whether these apps or portals share your data with other companies?</legend>
+            <label><input type="radio" name="sharing" value="yes"> Yes</label>
+            <label><input type="radio" name="sharing" value="no"> No</label>
+            <label><input type="radio" name="sharing" value="unsure"> Not sure</label>
+            <p class="field-error" hidden>Please choose an answer.</p>
+          </fieldset>
+
+          <fieldset class="question" data-question="deletion">
+            <legend>3. Do you know how to delete your data or account if you stop using one?</legend>
+            <label><input type="radio" name="deletion" value="yes"> Yes</label>
+            <label><input type="radio" name="deletion" value="no"> No</label>
+            <label><input type="radio" name="deletion" value="unsure"> Not sure</label>
+            <p class="field-error" hidden>Please choose an answer.</p>
+          </fieldset>
+
+          <fieldset class="question" data-question="security">
+            <legend>4. Do you use a strong, unique password (or two-step verification) for these accounts?</legend>
+            <label><input type="radio" name="security" value="yes"> Yes</label>
+            <label><input type="radio" name="security" value="no"> No</label>
+            <label><input type="radio" name="security" value="unsure"> Not sure</label>
+            <p class="field-error" hidden>Please choose an answer.</p>
+          </fieldset>
+
+          <fieldset class="question" data-question="shared">
+            <legend>5. Do you ever open these apps on shared devices or public Wi-Fi?</legend>
+            <label><input type="radio" name="shared" value="yes"> Yes</label>
+            <label><input type="radio" name="shared" value="no"> No</label>
+            <label><input type="radio" name="shared" value="unsure"> Not sure</label>
+            <p class="field-error" hidden>Please choose an answer.</p>
+          </fieldset>
+
+          <button type="submit" class="button">See my suggestions</button>
+        </form>
+
+        <!-- Results appear here after the form is submitted -->
+        <div id="results" class="results" hidden>
+          <h3 id="results-heading" tabindex="-1">Your suggestions</h3>
+          <ul id="results-list"></ul>
+          <p class="note">
+            These are general ideas, not medical or legal advice.
+            [Add a verified source for these suggestions here]
+          </p>
+          <button type="button" id="restart" class="button button-secondary">Restart the checkup</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        Student project for educational purposes. Not medical or legal advice.
+        [Add your names, course, and semester here]
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
